@@ -1,4 +1,9 @@
-﻿var supp_data;
+﻿/*
+	by: plainte
+	rework: oreg, numlock 
+*/
+
+var supp_data;
 var progress = 0;
 var units = game_data.units;
 var total_units = initializeUnits();
@@ -89,7 +94,7 @@ function forum_txt_generator(){
 			forum_post_txt += "[/**]";
 		}else if(x+1 == rows.length){
 			forum_post_txt += "[**]";
-			forum_post_txt += "Celkem: " + $(rows[x]).text().match(/\d+/)[0] + " tanyahelynyi egysÃ©g";
+            forum_post_txt += "Celkem: " + $(rows[x]).text().match(/\d+/)[0] + " jednotek selského dvora";
 			forum_post_txt += "[/**]";
 		}else{
 			var cols = $(rows[x]).find("td");
@@ -143,8 +148,10 @@ function get_incomming_supports() {
           let maybePlayerName = sp_d_cont[0].innerText;
 
           if (oreg === true) {
+            console.log("mÃ¡s erÅ‘sÃ­tÃ©se");
             maybePlayerName = maybePlayerName.trim();
           } else {
+            console.log("Ã©n erÅ‘sÃ­tÃ©sem");
             maybePlayerName = game_data.player.name;
           }
           if (!(maybePlayerName in players))
