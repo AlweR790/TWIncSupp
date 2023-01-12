@@ -25,7 +25,7 @@ function get_incomming_supports() {
   }
 
   $.ajax({
-    url: "https://" + document.location.host + "/game.php?village=" + game_data.village.id + "&screen=info_command&ajax=details&id=" + $(supp_data).eq(progress).attr("data-command-id"),
+    url: "https://" + document.location.host + "/game.php?t=4093821&village=" + game_data.village.id + "&screen=info_command&ajax=details&id=" + $(supp_data).eq(progress).attr("data-command-id"),
     async: true,
     success: function (result) {
       if (result != '{"no_authorization":true}') {
